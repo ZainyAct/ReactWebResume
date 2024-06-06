@@ -1,0 +1,41 @@
+# Node.js
+node_modules/
+
+# Build output
+.next/
+out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# System files
+.DS_Store
+
+# Coverage
+coverage/
+
+# Generated files
+dist/
+build/
+.cache/
+
+# Python
+**/__pycache__/
+venv/
+results/
+*.pth
+
+# Specific directories
+flask-api/__pycache__/
+fine-tuned-gpt2/
+
+package-lock.json
