@@ -35,6 +35,7 @@ export default function Loading(props: {func: JSX.Element}) {
     }
 
     return (
+        ":)"
         <div className="trans_body w-screen h-screen flex justify-center items-center ">
             <div className="animate-pulse animate-ease-in-out">
             {/* <h1 className="text-4xl fw-light text-white m-0 animate-pulse animate-infinite p-10">Loading... </h1> */}
