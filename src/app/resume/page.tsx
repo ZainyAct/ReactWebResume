@@ -3,67 +3,33 @@
 import React from "react";
 import AnimatedCursor from "react-animated-cursor";
 import Image from "next/image";
+import ReactPDF from "@react-pdf/renderer";
+
 import GitStatic from "@/app/assets/git_static.png";
-import { ProjectCards, ParticlesContainer } from "../../components/cards-screen";
+import { ProjectCards, ParticlesContainer } from "../components/cards-screen";
 import Particles from 'react-tsparticles';
 
-// Array of project objects containing data about each project
-const projects: any = [
+const resume: any = [
     {
         data: {
-            title: 'Indoor Air Quality Relay (AQR)',
-            description: 'AI-enhanced air quality and security monitoring system using Raspberry Pi and Flask.',
-            imageUrl: GitStatic,
-            link: '#',
-            tags: ['AI', 'Automation', 'Full Stack Development']
+            title: 'Mechatronics Resume',
+            description: 'Showcasing projects and skills in mechanical engineering, electronics, and computer science.',
+            imageUrl: GitStatic,  // Replace with the actual path to your image
+            link: './resume/mechRes',  // Replace with the actual link to your resume
+            tags: ['Mechatronics', 'Mechanical Engineering', 'Electronics']
         }
     },
     {
         data: {
-            title: 'Autonomous Greenhouse',
-            description: 'Smart greenhouse system with automated environmental control and Flask-based monitoring.',
-            imageUrl: GitStatic,
-            link: '#',
-            tags: ['Automation', 'IoT', 'Full Stack Development']
+            title: 'Software Resume',
+            description: 'Highlighting software development projects and expertise in various programming languages.',
+            imageUrl: GitStatic,  // Replace with the actual path to your image
+            link: './resume/softRes',  // Replace with the actual link to your resume
+            tags: ['Software Development', 'Programming', 'Full Stack Development']
         }
-    },
-    {
-        data: {
-            title: 'Lego 3D Printer',
-            description: 'Functional 3D printer built from Tetrix and LEGO elements with precise motor control.',
-            imageUrl: GitStatic,
-            link: '#',
-            tags: ['3D Printing', 'Mechanical Engineering']
-        }
-    },
-    {
-        data: {
-            title: 'Hand Gesture Controlled Mouse',
-            description: 'Innovative hand gesture controlled mouse using OpenCV for real-time tracking.',
-            imageUrl: GitStatic,
-            link: '#',
-            tags: ['Computer Vision', 'Accessibility']
-        }
-    },
-    {
-        data: {
-            title: 'Smart HUD Glasses',
-            description: 'Wearable glasses with AI-powered facial recognition and real-time language translation.',
-            imageUrl: GitStatic,
-            link: '#',
-            tags: ['AI', 'Wearable Technology', 'Full Stack Development']
-        }
-    },
-    // {
-    //     data: {
-    //         title: "...More on it's way!",
-    //         description: 'Stay tuned for more project development information',
-    //         imageUrl: GitStatic,
-    //         link: '#',
-    //         tags: ['']
-    //     }
-    // }
+    }
 ];
+
 
 
 // Main page component
@@ -85,7 +51,7 @@ export default function Resume() {
                 }}
             />
             
-            <ProjectCards projects={projects} />
+            <ProjectCards projects={resume} />
         </div>
     );
 }

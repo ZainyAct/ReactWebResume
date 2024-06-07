@@ -16,18 +16,19 @@ import Wait2 from "@/app/assets/ZainGifs/waiting2.gif";
 import Look from "@/app/assets/ZainGifs/lookingaround.gif";
 import EyeOpen from "@/app/assets/ZainGifs/waiting1.gif";
 import Aware from "@/app/assets/ZainGifs/aware.gif";
-import Loading from '../components/loading';
+import Loading from './components/loading';
 
 import React, { useState, useEffect, useRef, Component } from "react";
 import VantaBackground from "./VantaBackground.client";
-import { motion, AnimatePresence } from "framer-motion"
+import { motion as m, AnimatePresence } from "framer-motion"
+import { Loader } from "three";
 
 // Array of image objects with their links and visual representations (static and GIF)
 const images = [
   { link: "https://github.com/ZainyAct", vis: { static: GitStatic, gif: GitGif } },
   { link: "https://www.linkedin.com/in/zainmahmoud/", vis: { static: LinkInStatic, gif: LinkInGif } },
   { link: "./resume", vis: { static: ResStatic, gif: ResGif } },
-  { link: "./assets/Documents/Portfolio_May2A-1.pdf", vis: { static: PortStatic, gif: PortGif } },
+  { link: "./portfolio", vis: { static: PortStatic, gif: PortGif } },
   { link: "./contact", vis: { static: ContStatic, gif: ContGif } },
 ];
 
@@ -83,18 +84,8 @@ function CircularThing() {
   const [speed, setSpeed] = useState(25)
   const [angleOffset, setAngleOffset] = useState(0)
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const [circleVisible, setCircleVisible] = useState(false)
+  // const [circleVisible, setCircleVisible] = useState(false)
 
-    // Set visibility of the circle after a delay
-  useEffect(() => {
-  const timeout = setTimeout(() => setCircleVisible(true), 6500);
-
-  return () => {
-    clearTimeout(timeout);
-  };
-  }, []);
-
-    // Update angle offset to create rotation effect
   useEffect(() => {
     const maxAngle = Math.PI * 8;
     if (angleOffset < maxAngle) {
@@ -165,26 +156,25 @@ function CircularThing() {
     };
   }, []);
 
-  if (circleVisible){
-    return (
-      <div className={`relative w-[${radius*2.1}px] h-[${radius*2.1}px] animate-fade animate-duration-1000`}>
-        {itemsInCircle}
+  return (
+    <div className={`relative w-[${radius*2.1}px] h-[${radius*2.1}px] animate-fade animate-duration-1000`}>
+      {itemsInCircle}
 
-        <div className="absolute w-[150px] h-[150px] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <a href={"./about-me"} target="_blank" rel="noopener noreferrer">
-            <Image
-              src={zainGif}
-              alt=""
-              className="w-full h-full"
-              ref={zainGifImageRef}
-              style={{ transform: "scale(1.5)" }}
-            />
-          </a>
-        </div>
+      <div className="absolute w-[150px] h-[150px] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <a href={"./about-me"} target="_blank" rel="noopener noreferrer">
+          <Image
+            src={zainGif}
+            alt=""
+            className="w-full h-full"
+            ref={zainGifImageRef}
+            style={{ transform: "scale(1.5)" }}
+          />
+        </a>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
 
 interface AnimatableTextProps {
   data: { format?: string, text: string, customDelay?: number, anim?: string }[];
@@ -258,15 +248,49 @@ function AnimatableText(props: AnimatableTextProps) {
   );
 }
 
+const item = {
+  hiddenCirc: {
+      opacity: 0,
+  },
+  show: {
+      opacity:1,
+      y:0,
+      transition: {
+          ease: "easeIn",
+          duration: 1.6,
+      },
+  },
+  showCirc: {
+    opacity:1,
+    y:0,
+    transition: {
+        ease: "easeIn",
+        duration: 1.6,
+        delay:5.5,
+    },
+},
+  exit: {
+      opacity:0,
+      y:0,
+      transition: {
+          ease: "easeOut",
+          duration: 2,
+      },
+  }
+}
+
 
 // Main Home component
 export default function Home() {
 
-
   return (
+
     <div className="relative w-screen h-screen flex flex-col items-center justify-center">
-      <Loading func={<VantaBackground/>}/>
+      <m.div animate={item.show} initial={item.exit}>
       <VantaBackground />
+      </m.div>
+      <Loading func={<VantaBackground/>}/>
+
 
       <div className="roboto-slab absolute top-20 text-4xl text-white text-center grid grid-rows- p-2 gap-4" style={{ fontFamily: 'Roboto Slab' }}>
         <div className="grid justify-self-center grid-flow-col gap-2">
@@ -306,9 +330,9 @@ export default function Home() {
       
 
       {/* <AnimatableText data={titleText.data} delayChildren={titleText.defaultDelay} parent={titleText.parent}/> */}
-      <div className="flex justify-center" style={{ marginTop: '300px' }}>
+      <m.div animate={item.showCirc} initial={item.hiddenCirc} className="flex justify-center" style={{ marginTop: '300px' }}>
         <CircularThing />
-      </div>
+      </m.div>
     </div>
     </div>
   )}

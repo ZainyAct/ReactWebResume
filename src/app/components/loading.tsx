@@ -1,7 +1,37 @@
 "use client";
-//import {motion} from "framer-motion"
+import {motion as m} from "framer-motion"
 import React, { useEffect, useState } from 'react';
-import VantaBackground from "../app/VantaBackground.client";
+
+const container = {
+    show: {
+        transition: {
+            staggerChildren: 0.35,
+        },
+    },
+};
+
+const item = {
+    hidden: {
+        opacity: 0,
+        y: 0
+    },
+    show: {
+        opacity:1,
+        y:0,
+        transition: {
+            ease: [.6, 0.1, -.05, .95],
+            duration: 1.6,
+        },
+    },
+    exit: {
+        opacity:0,
+        y:0,
+        transition: {
+            ease: "easeIn",
+            duration: 2,
+        },
+    }
+}
 
 
 export default function Loading(props: {func: JSX.Element}) {
@@ -35,8 +65,7 @@ export default function Loading(props: {func: JSX.Element}) {
     }
 
     return (
-        ":)"
-        <div className="trans_body w-screen h-screen flex justify-center items-center ">
+        <m.div animate={item.exit} initial={item.show} className="trans_body w-screen h-screen flex justify-center items-center ">
             <div className="animate-pulse animate-ease-in-out">
             {/* <h1 className="text-4xl fw-light text-white m-0 animate-pulse animate-infinite p-10">Loading... </h1> */}
             <l-quantum
@@ -45,6 +74,6 @@ export default function Loading(props: {func: JSX.Element}) {
                 color="white"
             ></l-quantum>
             </div>
-        </div>
+        </m.div>
     );
     }
