@@ -1,4 +1,4 @@
-import React, {useCallback} from "react";
+import React, {useCallback, useState} from "react";
 import AnimatedCursor from "react-animated-cursor";
 import Image from "next/image";
 import GitStatic from "@/app/assets/git_static.png";
@@ -71,21 +71,34 @@ await engine.load({
 
 // Component to display project cards
 export const ProjectCards = (props: { projects: any }) => {
+    let componentsToRender = useState<JSX.Element[]>([]);
+    const newComponents: JSX.Element[] = [];
+
+    for (let i = 0; i <= 2; i++){
+        for (let j = 0; j <= 3; j++){
+            newComponents.push()
+        }
+    }
+
     return (
         
+        
         <div className="w-screen h-screen flex align-center justify-center flex-row">
-            <div className="grid grid-cols-3 gap-5 p-20 grid-flow">
                 {props.projects.map((project:any, index: any) => (
-                    <a key={index} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700" href={project.data.link}>
-                        <Image className="hover:animate-wiggle hover:animate-infinite text-justify object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={project.data.imageUrl} alt={project.data.title} />
-                        <div className="flex flex-col justify-between p-4 leading-normal">
-                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{project.data.title}</h5>
-                            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{project.data.description}</p>
-                        </div>
-                    </a>
+                    {for (let i = 0; i <= 3; i++) {
+                        <div className="grid  gap-5 p-20">
+                        <a key={index} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700" href={project.data.link}>
+                            <Image className="hover:animate-wiggle hover:animate-infinite text-justify object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={project.data.imageUrl} alt={project.data.title} />
+                            <div className="flex flex-col justify-between p-4 leading-normal">
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{project.data.title}</h5>
+                                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{project.data.description}</p>
+                            </div>
+                        </a>
+                    </div>
+                    }
+                    }
                 ))}
             </div>
-        </div>
     );
 }
 
