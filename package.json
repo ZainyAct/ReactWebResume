@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^14.2.3",
+    "next/font": "^14.2.3",
     "@react-pdf/renderer": "^3.4.4",
     "@tsparticles/engine": "^3.4.0",
     "@tsparticles/react": "^3.0.0",

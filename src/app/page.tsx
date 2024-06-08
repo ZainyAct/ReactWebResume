@@ -21,7 +21,7 @@ import Loading from './components/loading';
 import React, { useState, useEffect, useRef, Component } from "react";
 import VantaBackground from "./VantaBackground.client";
 import { motion as m, AnimatePresence } from "framer-motion"
-import { Loader } from "three";
+import { any } from "three/examples/jsm/nodes/Nodes.js";
 
 // Array of image objects with their links and visual representations (static and GIF)
 const images = [
@@ -102,6 +102,20 @@ function CircularThing() {
       }, 1000/30); 
     }
   }, [angleOffset, speed]);
+  
+  const [changeScreen, setScreenChanged] = useState(false)
+  let loadFunc: string = ''
+
+  useEffect (() => {
+    const loadScreen = () => {
+      setScreenChanged(true)
+    };
+    return () => {
+      <m.div>
+        <Loading func={loadFunc}/>
+      </m.div>
+    }
+  })
 
   // Calculate positions for each item in the circle
   for (let i = 0; i < count; i++) {
@@ -119,7 +133,7 @@ function CircularThing() {
           transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
         }}
       >
-        <a href={images[i].link} target="_blank" rel="noopener noreferrer">
+        <a onClick={loadFunc = images[i].link} href={images[i].link} target="_blank" rel="noopener noreferrer">
           <div className="relative w-full h-full rounded-full hover:animate-jump">
             <Image
               src={images[i].vis.static}
@@ -136,6 +150,7 @@ function CircularThing() {
       </div>
     );
   }
+
 
   const [zainGif, setZainGif] = useState(zainGifs[0].gif);
   const zainGifImageRef = useRef<HTMLImageElement>(null);
@@ -276,9 +291,24 @@ const item = {
           ease: "easeOut",
           duration: 2,
       },
+    },
+    showLoad: {
+      opacity:1,
+      y:0,
+      transition: {
+          ease: [.6, 0.1, -.05, .95],
+          duration: 1.6,
+      },
+  },
+  exitLoad: {
+      opacity:0,
+      y:0,
+      transition: {
+          ease: "easeIn",
+          duration: 2,
+      },
   }
 }
-
 
 // Main Home component
 export default function Home() {
@@ -289,7 +319,9 @@ export default function Home() {
       <m.div animate={item.show} initial={item.exit}>
       <VantaBackground />
       </m.div>
-      <Loading func={<VantaBackground/>}/>
+      <m.div animate={item.exitLoad} initial={item.showLoad} >
+        <Loading func={<VantaBackground/>}/>
+      </m.div>
 
 
       <div className="roboto-slab absolute top-20 text-4xl text-white text-center grid grid-rows- p-2 gap-4" style={{ fontFamily: 'Roboto Slab' }}>

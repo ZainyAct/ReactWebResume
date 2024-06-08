@@ -4,6 +4,9 @@ import React from "react";
 import AnimatedCursor from "react-animated-cursor";
 import Image from "next/image";
 import ReactPDF from "@react-pdf/renderer";
+import {motion as m} from "framer-motion"
+import Loading from '../components/loading';
+
 
 import GitStatic from "@/app/assets/git_static.png";
 import { ProjectCards, ParticlesContainer } from "../components/cards-screen";
