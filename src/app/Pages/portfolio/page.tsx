@@ -4,7 +4,7 @@ import React from "react";
 import AnimatedCursor from "react-animated-cursor";
 import Image from "next/image";
 import GitStatic from "@/app/assets/git_static.png";
-import { ProjectCards, ParticlesContainer } from "../components/cards-screen";
+import { ProjectCards, ParticlesContainer } from "../../components/cards-screen";
 import Particles from 'react-tsparticles';
 
 // Array of project objects containing data about each project

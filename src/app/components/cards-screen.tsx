@@ -1,3 +1,5 @@
+"use client"
+
 import React, {useCallback, useState} from "react";
 import AnimatedCursor from "react-animated-cursor";
 import Image from "next/image";
