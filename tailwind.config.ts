@@ -22,4 +22,5 @@ const config: Config = {
     require('tailwindcss-animated')
   ],
 };
+
 export default config;

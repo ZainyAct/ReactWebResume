@@ -1,4 +1,3 @@
-"use client";
 
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
@@ -23,9 +22,9 @@ import Aware from "@/app/assets/ZainGifs/aware.gif";
 const images = [
     { link: "https://github.com/ZainyAct", vis: { static: GitStatic, gif: GitGif } },
     { link: "https://www.linkedin.com/in/zainmahmoud/", vis: { static: LinkInStatic, gif: LinkInGif } },
-    { link: "./resume", vis: { static: ResStatic, gif: ResGif } },
-    { link: "./portfolio", vis: { static: PortStatic, gif: PortGif } },
-    { link: "./contact", vis: { static: ContStatic, gif: ContGif } },
+    { link: "./Pages/resume", vis: { static: ResStatic, gif: ResGif } },
+    { link: "./Pages/portfolio", vis: { static: PortStatic, gif: PortGif } },
+    { link: "./Pages/contact", vis: { static: ContStatic, gif: ContGif } },
 ];
 
 const zainGifs = [
