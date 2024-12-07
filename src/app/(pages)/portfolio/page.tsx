@@ -2,7 +2,7 @@
 
 import React from "react";
 import AnimatedCursor from "react-animated-cursor";
-import GitStatic from "@/app/assets/git_static.png";
+const GitStatic = "/assets/git_static.png";
 import { ProjectCards } from "../../../components/components/cards-screen";
 import AnimCursor from "../../../components/components/anim_cursor";
 

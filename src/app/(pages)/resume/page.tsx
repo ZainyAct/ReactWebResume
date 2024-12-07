@@ -7,7 +7,7 @@ import ReactPDF from "@react-pdf/renderer";
 import {motion as m} from "framer-motion"
 import Loading from '../../../components/components/loading';
 
-import GitStatic from "@/app/assets/git_static.png";
+const GitStatic = "/assets/git_static.png";
 import { ProjectCards } from "../../../components/components/cards-screen";
 import Particles from 'react-tsparticles';
 

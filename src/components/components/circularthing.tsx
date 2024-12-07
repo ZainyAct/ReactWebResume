@@ -2,23 +2,23 @@
 
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import GitStatic from "@/app/assets/git_static.png";
-import GitGif from "@/app/assets/git.gif";
-import LinkInStatic from "@/app/assets/linkedin_static.png";
-import LinkInGif from "@/app/assets/linkedin.gif";
-import ResStatic from "@/app/assets/res_static.png";
-import ResGif from "@/app/assets/resume.gif";
-import PortStatic from "@/app/assets/portfolio_static.png";
-import PortGif from "@/app/assets/portfolio.gif";
-import ContStatic from "@/app/assets/cont_static.png";
-import ContGif from "@/app/assets/contacts.gif";
+const GitStatic = "/assets/git_static.png";
+const GitGif = "/assets/git.gif";
+const LinkInStatic = "/assets/linkedin_static.png";
+const LinkInGif = "/assets/linkedin.gif";
+const ResStatic = "/assets/res_static.png";
+const ResGif = "/assets/resume.gif";
+const PortStatic = "/assets/portfolio_static.png";
+const PortGif = "/assets/portfolio.gif";
+const ContStatic = "/assets/cont_static.png";
+const ContGif = "/assets/contacts.gif";
 import Link from "next/link";
 
-import Wait1 from "@/app/assets/ZainGifs/waiting1.gif";
-import Wait2 from "@/app/assets/ZainGifs/waiting2.gif";
-import Look from "@/app/assets/ZainGifs/lookingaround.gif";
-import EyeOpen from "@/app/assets/ZainGifs/waiting1.gif";
-import Aware from "@/app/assets/ZainGifs/aware.gif";
+const Wait1 = "/assets/ZainGifs/waiting1.gif";
+const Wait2 = "/assets/ZainGifs/waiting2.gif";
+const Look = "/assets/ZainGifs/lookingaround.gif";
+const EyeOpen = "/assets/ZainGifs/waiting1.gif";
+const Aware = "/assets/ZainGifs/aware.gif";
 
 const images = [
     { link: "https://github.com/ZainyAct", vis: { static: GitStatic, gif: GitGif } },

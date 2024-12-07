@@ -1,9 +1,9 @@
 "use client"
 import React from 'react';
 import ProjectTemplate from '../../../../../components/components/ProjectTemplate';
-import AIMouse1 from '@/app/assets/Portfolio/AIMouse/AIMouse1.png';
-import AIMouse2 from '@/app/assets/Portfolio/AIMouse/AIMouse2.png';
-import AIMouse3 from '@/app/assets/Portfolio/AIMouse/AIMouse3.png';
+const AIMouse1 = '/assets/Portfolio/AIMouse/AIMouse1.png';
+const AIMouse2 = '/assets/Portfolio/AIMouse/AIMouse2.png';
+const AIMouse3 = '/assets/Portfolio/AIMouse/AIMouse3.png';
 
 const sections = [
   {
