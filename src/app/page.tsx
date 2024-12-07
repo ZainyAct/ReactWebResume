@@ -73,7 +73,7 @@ export default function Home() {
           </div>
           <div className="grid justify-self-center grid-flow-col gap-2">
             <div className="animate-fade animate-once animate-duration-[800ms] animate-delay-[3000ms] animate-ease-in">
-              2A Mechatronics Engineer at the University of Waterloo
+              2B Mechatronics Engineer at the University of Waterloo
             </div>
           </div>
 

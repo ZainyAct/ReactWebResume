@@ -88,14 +88,14 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ sections, projectTitl
             {section.image && (
             <div className="w-full lg:w-1/2 p-4">
               {typeof section.image === 'string' ? (
-                <img
-                  src={section.image}
-                  alt={section.imageAlt}
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${section.image}`}
+                  alt={section.imageAlt || 'Project image'}
                   className="rounded-lg shadow-lg object-cover w-full h-full"
                 />
               ) : (
                 <Image
-                  src={section.image}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${section.image}`}
                   alt={section.imageAlt || 'Project image'}
                   className="rounded-lg shadow-lg object-cover w-full h-full transition-transform duration-300 hover:scale-105"
                   placeholder="blur"

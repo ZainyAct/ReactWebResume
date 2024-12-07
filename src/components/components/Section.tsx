@@ -50,7 +50,7 @@ const Section: React.FC<SectionProps> = ({ title, description, imageUrl, imageAl
         </motion.div>
         {imageUrl && (
           <motion.img
-            src={imageUrl}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${imageUrl}`}
             alt={imageAlt}
             className="w-32 h-32 rounded-lg shadow-lg mt-4 md:mt-0 md:ml-6"
             initial={{ opacity: 0, scale: 0 }}

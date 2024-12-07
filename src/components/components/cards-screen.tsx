@@ -16,7 +16,7 @@ export const ProjectCards = (props: { projects: any }) => {
             <a href={project.data.link} className="flex flex-col items-center">
               <Image
                 className="object-cover rounded-lg mb-6"
-                src={project.data.imageUrl}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${project.data.imageUrl}`}
                 alt={project.data.title}
                 width={300}
                 height={300}

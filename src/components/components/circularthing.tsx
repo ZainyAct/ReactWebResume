@@ -24,7 +24,7 @@ const images = [
     { link: "https://github.com/ZainyAct", vis: { static: GitStatic, gif: GitGif } },
     { link: "https://www.linkedin.com/in/zainmahmoud/", vis: { static: LinkInStatic, gif: LinkInGif } },
     { link: "/resume", vis: { static: ResStatic, gif: ResGif } },
-    { link: "/resumes/Portfolio.pdf", vis: { static: PortStatic, gif: PortGif } },
+    { link: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/resumes/Portfolio.pdf`, vis: { static: PortStatic, gif: PortGif } },
     { link: "/contact", vis: { static: ContStatic, gif: ContGif } },
 ];
 
@@ -100,13 +100,14 @@ export default function CircularThing() {
                 <Link href={images[i].link} target="_blank" rel="noopener noreferrer">
                     <div className="relative w-full h-full rounded-full hover:animate-jump">
                         <Image
-                            src={images[i].vis.static}
+                            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${images[i].vis.static}`}
+
                             alt=""
                             width={120}
                             height={120}
                         />
                         <Image
-                            src={images[i].vis.gif}
+                            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${images[i].vis.gif}`}
                             alt=""
                             width={120}
                             height={120}
@@ -158,7 +159,7 @@ export default function CircularThing() {
                 <div className=" w-[150px] h-[150px] flex items-center justify-center">
                     <a href={"./about-me"} target="_blank" rel="noopener noreferrer">
                         <Image
-                            src={zainGif}
+                            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${zainGif}`}
                             alt=""
                             ref={zainGifImageRef}
                             width={200}

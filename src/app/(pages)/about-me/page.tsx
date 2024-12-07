@@ -18,7 +18,7 @@ export default function AboutMePage() {
             {/* Image Section */}
             <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-gray-300 shadow-md">
               <Image
-                src="/images/Zain.jpg" // Replace with your image path
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/Zain.jpg`}
                 alt="Zain Mahmoud"
                 width={192}
                 height={192}

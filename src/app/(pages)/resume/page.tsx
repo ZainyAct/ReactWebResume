@@ -17,7 +17,7 @@ const resume: any = [
             title: 'Mechatronics Resume',
             description: 'Showcasing projects and skills in mechanical engineering, electronics, and computer science.',
             imageUrl: '/resumes/mech.gif',  // Replace with the actual path to your image
-            link: '/resumes/MechatronicsResume.pdf',  // Direct link to the PDF in the public folder
+            link: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/resumes/MechatronicsResume.pdf`, // Direct link to the PDF in the public folder
             tags: ['Mechatronics', 'Mechanical Engineering', 'Electronics']
         }
     },
@@ -26,7 +26,7 @@ const resume: any = [
             title: 'Software Resume',
             description: 'Highlighting software development projects and expertise in various programming languages.',
             imageUrl: '/resumes/coding.gif',  // Replace with the actual path to your image
-            link: '/resumes/SoftwareResume.pdf',  // Direct link to the PDF in the public folder
+            link: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/resumes/SoftwareResume.pdf`, // Direct link to the PDF in the public folder
             tags: ['Software Development', 'Programming', 'Full Stack Development']
         }
     }
