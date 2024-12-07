@@ -68,7 +68,7 @@ export default function Home() {
           <div className="grid justify-self-center grid-flow-col gap-2">
             <div className="animate-fade animate-once animate-duration-[2500ms] animate-delay-1000">Hi.</div>
             <div className="animate-fade animate-once animate-duration-[1000ms] animate-delay-[2000ms] animate-ease-in">
-              I'm Zain.
+              I&#39;m Zain.
             </div>
           </div>
           <div className="grid justify-self-center grid-flow-col gap-2">
@@ -78,12 +78,12 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-6 gap-10">
-            <div className="animate-jump-in animate-once animate-ease-out animate-delay-[3500ms]">AI Innovator</div>
-            <div className="animate-jump-in animate-once animate-ease-out animate-delay-[4000ms]">Full Stack Architect</div>
-            <div className="animate-jump-in animate-once animate-ease-out animate-delay-[4500ms]">PCB Design Expert</div>
-            <div className="animate-jump-in animate-once animate-ease-out animate-delay-[5000ms]">Precision Machinist</div>
+            <div className="animate-jump-in animate-once animate-ease-out animate-delay-[3500ms]">AI Enthusiast</div>
+            <div className="animate-jump-in animate-once animate-ease-out animate-delay-[4000ms]">Full Stack Developer</div>
+            <div className="animate-jump-in animate-once animate-ease-out animate-delay-[4500ms]">Python Developer</div>
+            <div className="animate-jump-in animate-once animate-ease-out animate-delay-[5000ms]">Trained Machinist</div>
             <div className="animate-jump-in animate-once animate-ease-out animate-delay-[5500ms]">CAD Specialist</div>
-            <div className="animate-jump-in animate-once animate-ease-out animate-delay-[6000ms]">Python Developer</div>
+            <div className="animate-jump-in animate-once animate-ease-out animate-delay-[6000ms]">Mechanical Designer</div>
           </div>
 
           <m.div animate={item.showCirc} initial={item.hiddenCirc} className="flex justify-center" style={{ marginTop: '100px' }}>

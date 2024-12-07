@@ -24,7 +24,7 @@ const images = [
     { link: "https://github.com/ZainyAct", vis: { static: GitStatic, gif: GitGif } },
     { link: "https://www.linkedin.com/in/zainmahmoud/", vis: { static: LinkInStatic, gif: LinkInGif } },
     { link: "/resume", vis: { static: ResStatic, gif: ResGif } },
-    { link: "/portfolio", vis: { static: PortStatic, gif: PortGif } },
+    { link: "/resumes/Portfolio.pdf", vis: { static: PortStatic, gif: PortGif } },
     { link: "/contact", vis: { static: ContStatic, gif: ContGif } },
 ];
 

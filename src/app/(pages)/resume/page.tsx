@@ -38,23 +38,25 @@ const resume: any = [
 // Main page component
 export default function Resume() {
     return (
-        <div className="flex items-center justify-center w-screen h-screen light">
-            {/* <Particles id="light"/> */}
-            <AnimatedCursor
-                innerSize={8}
-                outerSize={35}
-                innerScale={1}
-                outerScale={2}
-                outerAlpha={0}
-                innerStyle={{
-                    backgroundColor: 'var(--cursor-color)'
-                }}
-                outerStyle={{
-                    border: '3px solid var(--cursor-color)'
-                }}
-            />
-            
-            <ProjectCards projects={resume} />
+        <div className="gradient relative w-screen h-screen flex flex-col items-center justify-center">
+            <div className="flex items-center justify-center w-screen h-screen light">
+                {/* <Particles id="light"/> */}
+                <AnimatedCursor
+                    innerSize={8}
+                    outerSize={35}
+                    innerScale={1}
+                    outerScale={2}
+                    outerAlpha={0}
+                    innerStyle={{
+                        backgroundColor: 'var(--cursor-color)'
+                    }}
+                    outerStyle={{
+                        border: '3px solid var(--cursor-color)'
+                    }}
+                />
+                
+                <ProjectCards projects={resume} />
+            </div>
         </div>
     );
 }

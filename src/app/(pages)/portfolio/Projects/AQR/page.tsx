@@ -33,7 +33,7 @@ const sections = [
           <p>Particulate Matter: Decreased by over 30%, keeping levels well under the WHO guideline of 10 µg/m³.</p>
           <p>Humidity and Temperature: Consistently within the ideal range of 40-60% RH and 20-22°C, respectively.</p>
           <p>Ozone: Reduced indoor levels by 20%, reducing respiratory risks.</p>
-          <p>Security: The AI camera's effectiveness in detecting unauthorized activities stands at 95%, significantly increasing the security of students’ accommodations.</p>
+          <p>Security: The AI camera&#39;s effectiveness in detecting unauthorized activities stands at 95%, significantly increasing the security of students’ accommodations.</p>
         </>
       ),
       imageUrl: 'image3_url.jpg',

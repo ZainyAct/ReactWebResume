@@ -14,7 +14,7 @@ const sections = [
       title: 'Technical Implementation',
       description: (
         <>
-          <p>Facial Recognition with OpenCV: Leveraged OpenCV's advanced facial recognition capabilities to enable the glasses to identify individuals in real-time. Implemented robust algorithms to detect and analyze facial features, ensuring accurate and reliable recognition performance. Optimized the software to run efficiently on the Raspberry Pi Zero 2, balancing computational complexity with real-time processing requirements.</p>
+          <p>Facial Recognition with OpenCV: Leveraged OpenCV&#39;s advanced facial recognition capabilities to enable the glasses to identify individuals in real-time. Implemented robust algorithms to detect and analyze facial features, ensuring accurate and reliable recognition performance. Optimized the software to run efficiently on the Raspberry Pi Zero 2, balancing computational complexity with real-time processing requirements.</p>
           <p>Real-time Language Translation: Implemented Deep Translator for real-time language translation, seamlessly integrating it with the HUD display and bone conduction headphones, facilitating effortless cross-language communication.</p>
           <p>Speech Recognition & Audio Output: Utilized SpeechRecognition for converting spoken language to text, enabling user interaction. Integrated gTTS to generate clear audio from translated text, ensuring natural-sounding output.</p>
           <p>3D Printed Frame Design: Utilized SolidWorks for frame design, ensuring precise dimensions and ergonomic fit, and PrusaSlicer for prototype printing, enabling rapid iteration and customization.</p>

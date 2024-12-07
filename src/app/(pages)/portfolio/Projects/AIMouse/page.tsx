@@ -24,7 +24,7 @@ const sections = [
         <b className="list-disc list-inside text-gray-800 text-xl">Performance Optimization:</b>
         <li>Implemented threading to ensure smooth performance, preventing lag between gesture recognition and action execution.</li>
         <b className="list-disc list-inside text-gray-800 text-xl">User Interface Design:</b>  
-        <li>Developed a straightforward and intuitive interface that easily allows users to control their computer's mouse through hand gestures.</li>
+        <li>Developed a straightforward and intuitive interface that easily allows users to control their computer&#39;s mouse through hand gestures.</li>
         </ul>
       </>
     ),

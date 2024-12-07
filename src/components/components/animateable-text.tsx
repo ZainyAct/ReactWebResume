@@ -6,17 +6,54 @@ import { motion as m, AnimatePresence } from "framer-motion"
 
 const titleText: { data: { format?: string, text: any, customDelay?: number, anim?: string }[], delayChildren?: number, parent: string } = {
     data: [
-        { format: 'items-center justify-center grid grid-cols-2', text: "Hi.", anim: "animate-fade animate-once animate-duration-[2500ms]", customDelay: 1000 },
-        { text: "I'm Zain", anim: "animate-fade animate-once animate-duration-[1000ms] animate-ease-in", customDelay: 500 },
-        { format: 'items-center justify-center grid grid-cols-1', text: "2A Mechatronics Engineer at the University of Waterloo", anim: "animate-fade animate-once animate-duration-[800ms] animate-ease-in" },
-        { format: 'items-start justify-items-center flex-row', text: "AI Innovator", anim: "animate-jump-in animate-once animate-ease-out animate-delay" },
-        { text: "Full Stack Architect", anim: "animate-jump-in animate-once animate-ease-out animate-delay" },
-        { text: "PCB Design Expert", anim: "animate-jump-in animate-once animate-ease-out animate-delay" },
-        { text: "Precision Machinist", anim: "animate-jump-in animate-once animate-ease-out animate-delay" },
-        { text: "CAD Specialist", anim: "animate-jump-in animate-once animate-ease-out animate-delay" },
-        { text: "Python Developer", anim: "animate-jump-in animate-once animate-ease-out animate-delay" },
-        { format: 'items-center justify-center flex-row', text: "You Name It.", anim: "animate-jump-in animate-once animate-ease-out animate-delay" },
+        { 
+            format: 'items-center justify-center grid grid-cols-2', 
+            text: "Hi.", 
+            anim: "animate-fade animate-once animate-duration-[2500ms]", 
+            customDelay: 1000 
+        },
+        { 
+            text: "I'm Zain", 
+            anim: "animate-fade animate-once animate-duration-[1000ms] animate-ease-in", 
+            customDelay: 500 
+        },
+        { 
+            format: 'items-center justify-center grid grid-cols-1', 
+            text: "2A Mechatronics Engineering Student at the University of Waterloo", 
+            anim: "animate-fade animate-once animate-duration-[800ms] animate-ease-in" 
+        },
+        { 
+            format: 'items-start justify-items-center flex-row', 
+            text: "Passionate About AI", 
+            anim: "animate-jump-in animate-once animate-ease-out animate-delay" 
+        },
+        { 
+            text: "Exploring Full Stack Development", 
+            anim: "animate-jump-in animate-once animate-ease-out animate-delay" 
+        },
+        { 
+            text: "Learning PCB Design", 
+            anim: "animate-jump-in animate-once animate-ease-out animate-delay" 
+        },
+        { 
+            text: "Practicing Machining Skills", 
+            anim: "animate-jump-in animate-once animate-ease-out animate-delay" 
+        },
+        { 
+            text: "Building CAD Projects", 
+            anim: "animate-jump-in animate-once animate-ease-out animate-delay" 
+        },
+        { 
+            text: "Developing Python Expertise", 
+            anim: "animate-jump-in animate-once animate-ease-out animate-delay" 
+        },
+        { 
+            format: 'items-center justify-center flex-row', 
+            text: "Always Learning.", 
+            anim: "animate-jump-in animate-once animate-ease-out animate-delay" 
+        },
     ],
+    
     delayChildren: 500,
     parent: 'grid grid-rows-4 roboto-slab absolute top-20 text-4xl text-center',
     };
