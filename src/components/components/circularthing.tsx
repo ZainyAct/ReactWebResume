@@ -24,7 +24,7 @@ const images = [
     { link: "https://github.com/ZainyAct", vis: { static: GitStatic, gif: GitGif } },
     { link: "https://www.linkedin.com/in/zainmahmoud/", vis: { static: LinkInStatic, gif: LinkInGif } },
     { link: "/resume", vis: { static: ResStatic, gif: ResGif } },
-    { link: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/resumes/Portfolio.pdf`, vis: { static: PortStatic, gif: PortGif } },
+    { link: "/resumes/Portfolio.pdf", vis: { static: PortStatic, gif: PortGif } },
     { link: "/contact", vis: { static: ContStatic, gif: ContGif } },
 ];
 
@@ -101,7 +101,6 @@ export default function CircularThing() {
                     <div className="relative w-full h-full rounded-full hover:animate-jump">
                         <Image
                             src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${images[i].vis.static}`}
-
                             alt=""
                             width={120}
                             height={120}
