@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import ProjectTemplate from '../../../../../../components/ProjectTemplate';
+import ProjectTemplate from '../../../../../components/components/ProjectTemplate';
 
 const sections = [
     {
@@ -64,7 +64,7 @@ const projectTitle = 'Project Title';
 const projectDescription = 'Short Project Description';
 
 const ProjectPage = () => {
-  return <ProjectTemplate sections={sections} projectTitle={projectTitle} projectDescription={projectDescription} />;
+  return <ProjectTemplate sections={sections} projectTitle={projectTitle}/>;
 };
 
 export default ProjectPage;

@@ -29,6 +29,6 @@ const MyDocument = () => (
 
 export default function softRes() {
     return (
-        ReactPDF.render(<MyDocument />, `${__dirname} ../assets/Documents/softRes.pdf`)
+        ReactPDF.render(<MyDocument />, `${__dirname} SoftwareResumeNEW.pdf`)
     )
 }

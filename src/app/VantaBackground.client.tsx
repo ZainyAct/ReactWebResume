@@ -1,5 +1,6 @@
 // src/components/VantaBackground.tsx
-"use client"
+"use client"; 
+
 import Script from 'next/script'
 import React, { useEffect, useRef } from 'react';
 const VantaBackground: React.FC = () => {

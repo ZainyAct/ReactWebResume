@@ -5,11 +5,10 @@ import AnimatedCursor from "react-animated-cursor";
 import Image from "next/image";
 import ReactPDF from "@react-pdf/renderer";
 import {motion as m} from "framer-motion"
-import Loading from '../../../../components/loading';
-
+import Loading from '../../../components/components/loading';
 
 import GitStatic from "@/app/assets/git_static.png";
-import { ProjectCards, ParticlesContainer } from "../../../../components/cards-screen";
+import { ProjectCards } from "../../../components/components/cards-screen";
 import Particles from 'react-tsparticles';
 
 const resume: any = [
@@ -17,8 +16,8 @@ const resume: any = [
         data: {
             title: 'Mechatronics Resume',
             description: 'Showcasing projects and skills in mechanical engineering, electronics, and computer science.',
-            imageUrl: GitStatic,  // Replace with the actual path to your image
-            link: './resume/mechRes',  // Replace with the actual link to your resume
+            imageUrl: '/resumes/mech.gif',  // Replace with the actual path to your image
+            link: '/resumes/MechatronicsResume.pdf',  // Direct link to the PDF in the public folder
             tags: ['Mechatronics', 'Mechanical Engineering', 'Electronics']
         }
     },
@@ -26,12 +25,13 @@ const resume: any = [
         data: {
             title: 'Software Resume',
             description: 'Highlighting software development projects and expertise in various programming languages.',
-            imageUrl: GitStatic,  // Replace with the actual path to your image
-            link: './resume/softRes',  // Replace with the actual link to your resume
+            imageUrl: '/resumes/coding.gif',  // Replace with the actual path to your image
+            link: '/resumes/SoftwareResume.pdf',  // Direct link to the PDF in the public folder
             tags: ['Software Development', 'Programming', 'Full Stack Development']
         }
     }
 ];
+
 
 
 

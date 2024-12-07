@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import ProjectTemplate from '@/components/components/ProjectTemplate'
+import ProjectTemplate from '../../../../components/components/ProjectTemplate';
 
 const sections = [
   {
