@@ -2,26 +2,17 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
-from transformers import AutoTokenizer, AutoModelForCausalLM, TextIteratorStreamer
-import torch
-import threading
+from llama_cpp import Llama
+import asyncio
 
 app = FastAPI()
 
-# Load model + tokenizer
-model_path = "./models/Meta-Llama-3-8B-GPTQ"
-tokenizer = AutoTokenizer.from_pretrained(
-    model_path, 
-    trust_remote_code=True, 
-    local_files_only=True
-)
-
-model = AutoModelForCausalLM.from_pretrained(
-    model_path,
-    device_map="auto",
-    trust_remote_code=True,
-    torch_dtype=torch.float16,
-    local_files_only=True
+# Load the GGUF model
+llm = Llama(
+    model_path="./models/llama-pro-8b-instruct.Q4_K_M.gguf",
+    n_ctx=4096,
+    n_gpu_layers=40,
+    chat_format="chatml"  # LLaMA 3 uses ChatML
 )
 
 class ChatRequest(BaseModel):
@@ -29,28 +20,27 @@ class ChatRequest(BaseModel):
 
 @app.post("/chat/stream")
 async def stream_chat(req: ChatRequest):
-    prompt = open("persona.txt").read() + f"\nUser: {req.message}\nZain:"
-
-    streamer = TextIteratorStreamer(tokenizer, skip_prompt=True, skip_special_tokens=True)
+    persona = open("persona.txt", encoding="utf-8").read()
     
-    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+    messages = [
+        {"role": "system", "content": persona},
+        {"role": "user", "content": req.message}
+    ]
 
-    generation_kwargs = dict(
-        **inputs,
-        streamer=streamer,
-        max_new_tokens=200,
-        temperature=0.7,
-        do_sample=True,
-        top_p=0.9,
-        top_k=50
-    )
+    def generate():
+        for chunk in llm.create_chat_completion(
+            messages=messages,
+            stream=True,
+            max_tokens=512,
+            temperature=0.7,
+            top_p=0.9,
+            stop=["</s>"]
+        ):
+            yield chunk["choices"][0]["delta"].get("content", "")
 
-    # Run generation in a background thread
-    thread = threading.Thread(target=model.generate, kwargs=generation_kwargs)
-    thread.start()
+    async def streamer():
+        for token in generate():
+            yield f"data: {token}\n\n"
+            await asyncio.sleep(0.001)
 
-    async def token_streamer():
-        for token in streamer:
-            yield token
-
-    return StreamingResponse(token_streamer(), media_type="text/event-stream")
+    return StreamingResponse(streamer(), media_type="text/event-stream")
