@@ -1,1 +1,4 @@
 /node_modules/*
+/reactwesiteres/.next
+/reactwesiteres/.cache
+/reactwesiteres/.out
