@@ -2,3 +2,4 @@
 /reactwesiteres/.next
 /reactwesiteres/.cache
 /reactwesiteres/.out
+/backend/flask-api/venv/** */
