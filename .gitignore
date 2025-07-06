@@ -1,5 +1,5 @@
 /node_modules/*
-/reactwesiteres/.next
-/reactwesiteres/.cache
-/reactwesiteres/.out
+/frontend/.next
+/frontend/.cache
+/frontend/.out
 /backend/flask-api/venv/** */

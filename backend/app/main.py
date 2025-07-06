@@ -65,4 +65,7 @@ async def stream_chat_get(message: str):
             async for word in to_async_generator(generate()):
                 yield f"data: {word}\n\n"
 
-    return StreamingResponse(streamer(), media_type="text/event-stream")
+    return StreamingResponse(
+        streamer(),
+        media_type="text/event-stream",
+    )
