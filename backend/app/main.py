@@ -25,7 +25,9 @@ llm = Llama(
 
 # Global lock to serialize model access
 llm_lock = asyncio.Lock()
-
+@app.get("/health")
+async def health():
+    return ({"message": "ok"})
 @app.get("/chat/stream-client")
 async def stream_chat_get(message: str):
     persona = open("persona.txt", encoding="utf-8").read()
